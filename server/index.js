@@ -22,7 +22,7 @@ const CLIENT_SECRET = process.env.EFI_CLIENT_SECRET;
 const PIX_KEY = process.env.EFI_PIX_KEY;
 
 const httpsAgent = new https.Agent({
-  pfx: fs.readFileSync('./certificado.p12'),
+  pfx: Buffer.from(process.env.CERTIFICADO_P12_BASE64, 'base64'),
   passphrase: ''
 });
 
