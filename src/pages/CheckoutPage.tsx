@@ -41,7 +41,7 @@ const CheckoutPage = () => {
     });
 
     try {
-      const response = await fetch('http://localhost:3000/create-payment', {
+      const response = await fetch('thebuxx.discloud.app/create-payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, items: enrichedItems })
@@ -60,7 +60,7 @@ const CheckoutPage = () => {
 
       const interval = setInterval(async () => {
         try {
-          const res = await fetch(`http://localhost:3000/download/${data.id}`);
+          const res = await fetch(`thebuxx.discloud.app/download/${data.id}`);
           if (res.status === 200) {
             clearInterval(interval);
             setStatus('pago');
